@@ -22,7 +22,7 @@ var MongoClient = require('mongodb').MongoClient;
 var server      = new hapi.Server();
 
 if (process.env.OPENSHIFT_MONGODB_DB_PASSWORD) {
-  mongoUrl = 'mongodb://' + process.env.OPENSHIFT_MONGODB_DB_USERNAME + ':' OPENSHIFT_MONGODB_DB_PASSWORD + '@' + process.env.OPENSHIFT_MONGODB_DB_HOST + ':' + process.env.OPENSHIFT_MONGODB_PORT + '/' + process.env.OPENSHIFT_APP_NAME;
+  mongoUrl = 'mongodb://' + process.env.OPENSHIFT_MONGODB_DB_USERNAME + ':' + OPENSHIFT_MONGODB_DB_PASSWORD + '@' + process.env.OPENSHIFT_MONGODB_DB_HOST + ':' + process.env.OPENSHIFT_MONGODB_PORT + '/' + process.env.OPENSHIFT_APP_NAME;
 }
 
 var findDocuments = function(db, callback) {
