@@ -118,6 +118,8 @@ function filmsHandler(request, response) {
   // mongo connection
   var url = mongoUrl;
   MongoClient.connect(url, function(err, db) {
+    console.log(err);
+    console.log(db);
     findDocuments(db, function(docs) {
       response(docs);
       db.close();
