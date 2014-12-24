@@ -1,0 +1,19 @@
+{
+  "name": "hapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "bcrypt": "^0.8.0",
+    "hapi": "^8.0.0",
+    "hapi-auth-basic": "^2.0.0",
+    "joi": "^5.0.2",
+    "mongodb": "^1.4.26"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tamas Piros",
+  "license": "MIT"
+}
