@@ -66,7 +66,13 @@ var findOneActor = function(db, lname, callback) {
 
 }
 
-server.connection({ port: port, host: host });
+var config = {
+  cors: {
+    origin: ['http://null.jsbin.com']
+  }
+};
+
+server.connection({ port: port, host: host }, config);
 
 server.route({
   path: '/',
