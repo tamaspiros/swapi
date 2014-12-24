@@ -118,8 +118,10 @@ function filmsHandler(request, response) {
   // mongo connection
   var url = mongoUrl;
   MongoClient.connect(url, function(err, db) {
-    console.log(err);
-    console.log(db);
+    if (err) {
+      console.log(err);
+    }
+
     findDocuments(db, function(docs) {
       response(docs);
       db.close();
@@ -131,6 +133,9 @@ function filmHandler(request, response) {
   var episodeNo = request.params.episodeno;
   var url = mongoUrl;
   MongoClient.connect(url, function(err, db) {
+    if (err) {
+      console.log(err);
+    }
     findOne(db, episodeNo, function(doc) {
       response(doc);
       db.close();
@@ -142,6 +147,9 @@ function actorHandler(request, response) {
   var lname = request.params.lname;
   var url = mongoUrl;
   MongoClient.connect(url, function(err, db) {
+    if (err) {
+      console.log(err);
+    }
     findOneActor(db, lname, function(doc) {
       response(doc);
       db.close();
