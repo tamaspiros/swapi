@@ -1,24 +1,13 @@
-/*
-/films
-  title
-  plot
-  duration
-  imdbscore
-  cast []
-  director
+'use strict';
 
-/actors
-  name
-  gender
-  birthday
-
-*/
 var hapi        = require('hapi');
 var joi         = require('joi');
+var MongoClient = require('mongodb').MongoClient;
+
 var port        = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 var host        = process.env.OPENSHIFT_NODEJS_IP || 'localhost';
 var mongoUrl    = 'mongodb://localhost:27017/sw';
-var MongoClient = require('mongodb').MongoClient;
+
 var server      = new hapi.Server();
 
 if (process.env.OPENSHIFT_MONGODB_DB_PASSWORD) {
@@ -65,12 +54,6 @@ var findOneActor = function(db, lname, callback) {
   });
 
 }
-
-var options = {
-  cors: {
-    origin: ['http://null.jsbin.com']
-  }
-};
 
 server.connection({host: host, port: port, routes: { cors: true }});
 
